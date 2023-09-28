@@ -1,5 +1,6 @@
 import puppeteer, { Browser } from "puppeteer";
 import dotenv from "dotenv";
+import { BadRequestError } from "./errors";
 
 /**
  * @description - Configures a puppeteer browser instance with the scraperapi proxy server
@@ -19,8 +20,7 @@ const configuredPuppeteerBrowser = async (): Promise<Browser> => {
 
         return browser;
     } catch (error) {
-       console.log(error)
-       return Promise.reject(error);
+      throw new BadRequestError('Error configuring puppeteer browser');
     }
 };
 

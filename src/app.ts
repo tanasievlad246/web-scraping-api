@@ -1,5 +1,6 @@
 import express, { Express, json } from 'express';
 import pageContentRouter from './routes/page-content';
+import { errorHandler } from './middleware/errorHandler';
 
 const app: Express = express();
 
@@ -14,5 +15,7 @@ app.get('*', (req, res) => {
     message: 'Resource not found',
   });
 });
+
+app.use(errorHandler);
 
 export default app;

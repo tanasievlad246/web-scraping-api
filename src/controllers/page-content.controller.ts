@@ -3,10 +3,9 @@ import { scrapePageContent } from '../services/page-content.service';
 
 export const index = async (req: Request, res: Response) => {
   try {
-    const { targetUrl, optionalElements = [], attributes } = req.body;
-    const filters = req.query;
+    const { targetUrl, optionalElements = [] } = req.body;
 
-    const result = await scrapePageContent(targetUrl, optionalElements);
+    const result = await scrapePageContent({ url: targetUrl, elementsToScrape: optionalElements });
 
     res.send({
       success: true,

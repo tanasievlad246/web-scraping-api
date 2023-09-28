@@ -1,5 +1,5 @@
-import configuredPuppeteerBrowser from '../puppeteer';
 import logger from '../logger';
+import configuredPuppeteerBrowser from '../puppeteer';
 
 interface IScrapePageContent {
     url: string;
@@ -33,10 +33,11 @@ export const scrapePageContent = async({ url, elementsToScrape = [], extractAllT
         await page.goto(url, {
             waitUntil: 'networkidle0',
         });
-        console.log('extractAllText', extractAllText)
+
         const data = await page.evaluate((elementsToScrape, extractAllText) => {
             const formatScrapedElementsData = (elements: Iterable<Element> | ArrayLike<Element>) => {
                 return Array.isArray(elements) ? elements.map((el: Element) => ({
+                    tagName: el.localName,
                     textContent: el.textContent,
                     attributes: el.getAttributeNames().map(attr => ({ [attr]: el.getAttribute(attr) })),
                     classes: el.getAttribute('class')
@@ -49,26 +50,10 @@ export const scrapePageContent = async({ url, elementsToScrape = [], extractAllT
 
             const optionalElements: Record<string,IScrapedElement[]> = {};
             const elementCounts: Record<string,number> = {};
-            let textFromPage: IElementTextData[] = [];
+            let textFromPage: IScrapedElement[] = [];
 
             if (extractAllText) {
-                textFromPage = Array.isArray(allElements) ? allElements.map((element) => {
-                    const tagName = element.tagName.toLowerCase();
-                    const textContent = element.textContent;
-                    let link = null;
-
-                    const elementAttributes = element.getAttributeNames();
-
-                    if (elementAttributes.includes('href')) {
-                        link = element.getAttribute('href');
-                    }
-
-                    return {
-                        tagName,
-                        textContent,
-                        link,
-                    }
-                }) : [];
+                textFromPage = formatScrapedElementsData(allElements).filter(el => !['html', 'meta', 'html', 'script'].includes(el.tagName));
             }
 
             if (elementsToScrape.length > 0) {
@@ -95,6 +80,7 @@ export const scrapePageContent = async({ url, elementsToScrape = [], extractAllT
         browser.close();
         return data;
     } catch (error) {
+        logger.error(error);
         throw error;
     }
 };

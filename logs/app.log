@@ -19,3 +19,11 @@
 2023-09-28T13:55:43.606Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:55:43] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
 2023-09-28T13:55:57.243Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:55:57] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}
 2023-09-28T13:57:41.555Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:57:41] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}
+2023-09-28T14:09:22.804Z info: [POST] [/api/v1/page-content] [4/8/2023 - 17:9:22] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T14:10:02.607Z info: [POST] [/api/v1/page-content] [4/8/2023 - 17:10:2] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T14:12:07.888Z info: [POST] [/api/v1/page-content] [4/8/2023 - 17:12:7] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T14:45:13.335Z info: [POST] [/api/v1/page-content] [4/8/2023 - 17:45:13] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T14:45:20.591Z info: [POST] [/api/v1/page-content] [4/8/2023 - 17:45:20] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}
+2023-09-28T14:46:39.820Z info: [POST] [/api/v1/sentiment-analysis] [4/8/2023 - 17:46:39] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}
+2023-09-28T14:47:21.742Z info: [POST] [/api/v1/sentiment-analysis] [4/8/2023 - 17:47:21] {"text":"I just received great news today! It's a beautiful sunny day, and I'm feeling so happy. I can't wait to celebrate with my friends and family. Life is wonderful!"} {}
+2023-09-28T14:48:49.662Z info: [POST] [/api/v1/sentiment-analysis] [4/8/2023 - 17:48:49] {"text":"I just received great news today! It's a beautiful sunny day, and I'm feeling so happy. I can't wait to celebrate with my friends and family. Life is wonderful!"} {}

@@ -1,5 +1,5 @@
-import { Result } from 'express-validator';
 import configuredPuppeteerBrowser from '../puppeteer';
+import logger from '../logger';
 
 interface IScrapePageContent {
     url: string;
@@ -11,6 +11,7 @@ interface IScrapePageContentResponse {
     h3: IScrapedElement[];
     p: IScrapedElement[];
     optionalElements: Record<string,IScrapedElement[]>;
+    extractAllText?: IElementTextData[];
 }
 
 interface IScrapedElement {
@@ -20,19 +21,19 @@ interface IScrapedElement {
 }
 
 interface IElementTextData {
-    tagName: string;
-    textContent: string;
-    link: string;
+    tagName: string | null;
+    textContent: string | null;
+    link: string | null;
 }
 
-export const scrapePageContent = async({ url, elementsToScrape = [], extractAllText = false }: IScrapePageContent): Promise<IScrapePageContentResponse> => {
+export const scrapePageContent = async({ url, elementsToScrape = [], extractAllText }: IScrapePageContent): Promise<IScrapePageContentResponse> => {
     try {
         const browser = await configuredPuppeteerBrowser();
         const page  = await browser.newPage();
         await page.goto(url, {
             waitUntil: 'networkidle0',
         });
-
+        console.log('extractAllText', extractAllText)
         const data = await page.evaluate((elementsToScrape, extractAllText) => {
             const formatScrapedElementsData = (elements: Iterable<Element> | ArrayLike<Element>) => {
                 return Array.isArray(elements) ? elements.map((el: Element) => ({
@@ -44,11 +45,11 @@ export const scrapePageContent = async({ url, elementsToScrape = [], extractAllT
 
             const h3Elements = Array.from(document.querySelectorAll('h3'));
             const pElements = Array.from(document.querySelectorAll('p'));
-            const allElements = document.querySelectorAll('*');
+            const allElements = Array.from(document.querySelectorAll('*'));
 
             const optionalElements: Record<string,IScrapedElement[]> = {};
             const elementCounts: Record<string,number> = {};
-            let textFromPage: IElementTextData[];
+            let textFromPage: IElementTextData[] = [];
 
             if (extractAllText) {
                 textFromPage = Array.isArray(allElements) ? allElements.map((element) => {
@@ -86,7 +87,8 @@ export const scrapePageContent = async({ url, elementsToScrape = [], extractAllT
                 elementCounts,
                 h3: formatScrapedElementsData(h3Elements),
                 p: formatScrapedElementsData(pElements),
-                optionalElements
+                optionalElements,
+                textFromPage,
             };
         }, elementsToScrape, extractAllText);
 

@@ -10,3 +10,12 @@
 2023-09-28T13:47:49.199Z info: [POST] [4/8/2023 - 1695908869199] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {} /api/v1/page-content
 2023-09-28T13:48:10.775Z info: [POST] [4/8/2023 - 16:48:function getSeconds() { [native code] }] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {} /api/v1/page-content
 2023-09-28T13:48:30.166Z info: [POST] [4/8/2023 - 16:48:30] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {} /api/v1/page-content
+2023-09-28T13:49:36.873Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:49:36] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:50:16.266Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:50:16] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:51:01.467Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:51:1] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:52:19.040Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:52:19] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:54:18.585Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:54:18] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:55:03.678Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:55:3] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:55:43.606Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:55:43] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","extractAllText":true} {}
+2023-09-28T13:55:57.243Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:55:57] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}
+2023-09-28T13:57:41.555Z info: [POST] [/api/v1/page-content] [4/8/2023 - 16:57:41] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}

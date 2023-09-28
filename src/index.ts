@@ -1,13 +1,14 @@
-import express, { Express, json } from 'express';
+import app from './app';
+import dotenv from 'dotenv';
 
-const app: Express = express();
+const startup = async () => {
+    dotenv.config();
 
-app.use(json());
+    const port = process.env.PORT || 3000;
 
-app.get('*', (req, res) => {
-  res.status(404).send({
-    message: 'Resource not found',
-  });
-});
+    app.listen(port, () => {
+        console.log(`Server started on port ${port}`);
+    });
+}
 
-app.listen(3000, () => console.log('Server running'));
+startup();

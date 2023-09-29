@@ -1,2 +1,0 @@
-2023-09-29T06:18:39.770Z info: [POST] [/api/v1/page-content] [5/8/2023 - 9:18:39] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer","optionalElements":["img","div"],"extractAllText":true} {}
-2023-09-29T06:19:07.047Z info: [POST] [/api/v1/blog-word-count] [5/8/2023 - 9:19:7] {"targetUrl":"https://wsa-test.vercel.app/blog/the-radiant-days-of-summer"} {}

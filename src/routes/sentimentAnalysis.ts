@@ -6,7 +6,7 @@ import { body } from 'express-validator';
 const router = Router();
 
 router.post('/', [
-    body('text').notEmpty().withMessage('Text is required for sentiment analysis'),
+    body('targetUrl').notEmpty().isURL().withMessage('Target url is required for sentiment analysis'),
 ], validateRequest, sentimentAnalysis);
 
 export default router;

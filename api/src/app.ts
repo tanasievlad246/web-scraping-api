@@ -18,20 +18,14 @@ const app: Express = express();
 
 app.use(json());
 
-const prefix = '/api/v1';
+const prefix = '/api/v1/';
 
 app.use(limiter);
 app.use(globalLogger);
 
-app.use(`${prefix}/page-content`, pageContentRouter);
-app.use(`${prefix}/sentiment-analysis`, sentimentAnalysisRouter);
-app.use(`${prefix}/blog-word-count`, getBlogWordCountRouter);
-
-app.get('*', (req, res) => {
-  res.status(404).send({
-    message: 'Resource not found',
-  });
-});
+app.use(`${prefix}page-content`, pageContentRouter);
+app.use(`${prefix}sentiment-analysis`, sentimentAnalysisRouter);
+app.use(`${prefix}blog-word-count`, getBlogWordCountRouter);
 
 app.use(errorHandler);
 

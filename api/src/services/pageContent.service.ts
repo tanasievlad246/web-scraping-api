@@ -17,7 +17,6 @@ interface IScrapePageContentResponse {
 interface IScrapedElement {
     textContent: (string | null);
     attributes: { [x: string]: any; };
-    classes: (string | null);
 }
 
 interface IElementTextData {
@@ -40,7 +39,6 @@ export const scrapePageContent = async({ url, elementsToScrape = [], extractAllT
                     tagName: el.localName,
                     textContent: el.textContent,
                     attributes: el.getAttributeNames().map(attr => ({ [attr]: el.getAttribute(attr) })),
-                    classes: el.getAttribute('class')
                 })) : [];
             };
 

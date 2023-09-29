@@ -1,38 +1,3 @@
-export const anger = [
-    'contempt', 'disgust', 'revulsion',
-    'envy', 'jealousy',
-    'exasperation', 'frustration',
-    'aggravation', 'agitation', 'annoyance', 'grouchiness', 'grumpiness', 'irritation',
-    'anger', 'bitterness', 'dislike', 'ferocity', 'fury', 'hate', 'hostility', 'loathing', 'outrage',
-    'rage', 'resentment', 'scorn', 'spite', 'vengefulness', 'wrath',
-    'torment'
-];
-export const fear = [
-    'alarm', 'fear', 'fright', 'horror', 'hysteria', 'mortification', 'panic', 'shock', 'terror',
-    'anxiety', 'apprehension', 'distress', 'dread', 'nervousness', 'tenseness', 'uneasiness', 'worry'
-];
-export const joy = [
-    'amusement', 'bliss', 'cheerfulness', 'delight', 'ecstasy', 'elation', 'enjoyment',
-    'euphoria', 'gaiety', 'gladness', 'glee', 'happiness', 'jolliness', 'joviality', 'joy', 'jubilation', 'satisfaction',
-    'contentment', 'pleasure', 'enthrallment', 'rapture', 'eagerness', 'hope', 'optimism',
-    'pride', 'triumph', 'relief', 'enthusiasm', 'excitement', 'exhilaration', 'thrill', 'zeal', 'zest'
-];
-export const sadness = [
-    'depression', 'despair', 'gloom', 'glumness', 'grief', 'hopelessness', 'melancholy', 'misery', 'sadness', 'sorrow', 'unhappiness', 'woe',
-    'alienation', 'defeat', 'dejection', 'embarrassment', 'homesickness', 'humiliation', 'insecurity', 'isolation', 'insult', 'loneliness', 'neglect', 'rejection',
-    'depression', 'despair', 'gloom', 'glumness', 'grief', 'hopelessness', 'melancholy', 'misery', 'sadness', 'sorrow', 'unhappiness', 'woe',
-    'guilt', 'regret', 'remorse', 'shame',
-    'agony', 'anguish', 'hurt', 'suffering',
-    'pity', 'sympathy'
-];
-export const love = [
-    'adoration', 'affection', 'attraction', 'caring', 'compassion', 'fondness', 'liking', 'love', 'sentimentality', 'tenderness',
-    'longing', 'arousal', 'desire', 'infatuation', 'lust', 'passion'
-];
-export const surprise = [
-    'amazement', 'astonishment', 'surprise'
-];
-
 interface ISentimentLexicon {
     [key: string]: number;
 }
@@ -198,4 +163,21 @@ export const surpriseLexicon: ISentimentLexicon = {
   amazement: 1,
   astonishment: 1,
   surprise: 1,
-}
+  startle: 1,
+  stun: 1,
+  bewilderment: 1,
+  shock: 1,
+  dismay: 1,
+  awe: 1,
+  wonder: 1,
+  disbelief: 1,
+  incredulity: 1,
+  apprehension: 1,
+  gasp: 1,
+  flabbergast: 1,
+  astoundment: 1,
+  unpredictability: 1,
+  stupefaction: 1,
+  marvel: 1,
+  consternation: 1,
+};

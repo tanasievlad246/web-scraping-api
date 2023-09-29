@@ -5,6 +5,7 @@ import { rateLimit } from 'express-rate-limit'
 
 import pageContentRouter from './routes/pageContent';
 import sentimentAnalysisRouter from './routes/sentimentAnalysis';
+import getBlogWordCountRouter from './routes/blogWordCount';
 
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000,
@@ -24,6 +25,7 @@ app.use(globalLogger);
 
 app.use(`${prefix}/page-content`, pageContentRouter);
 app.use(`${prefix}/sentiment-analysis`, sentimentAnalysisRouter);
+app.use(`${prefix}/blog-word-count`, getBlogWordCountRouter);
 
 app.get('*', (req, res) => {
   res.status(404).send({

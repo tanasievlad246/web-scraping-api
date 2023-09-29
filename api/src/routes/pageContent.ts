@@ -9,6 +9,7 @@ router.post("/", [
     body('optionalElements').optional().isArray({
         min: 1,
     }).withMessage('The optionalElements field must be an array of strings representing HTML tags'),
+    body('extractAllText').optional().isBoolean().withMessage('The extractAllText field must be a boolean'),
 ], validateRequest, index);
 
 export default router;

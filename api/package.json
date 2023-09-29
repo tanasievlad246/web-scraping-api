@@ -18,6 +18,8 @@
     "express-rate-limit": "^7.0.2",
     "express-validator": "^7.0.1",
     "puppeteer": "^21.3.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "winston": "^3.10.0"
   },
   "devDependencies": {

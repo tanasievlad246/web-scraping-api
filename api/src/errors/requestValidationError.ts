@@ -1,4 +1,4 @@
-import { FieldValidationError, ValidationError } from 'express-validator';
+import { ValidationError } from 'express-validator';
 import { CustomError } from './customError';
 
 export class RequestValidationError extends CustomError {
@@ -15,7 +15,8 @@ export class RequestValidationError extends CustomError {
     return this.errors.map(err => {
       return {
         message: err.msg,
-        type: err.type
+        type: err.type,
+        completeError: err
       };
     });
   }

@@ -1,34 +1,25 @@
 import configuredPuppeteerBrowser from "../puppeteer";
 
-const nonTextTags = "script,link,meta,style,img,input,button,br,hr,area,iframe,base,embed,object,param,track,wbr,source,colgroup,col,link";
-
 export const getBlogWordCount = async (url: string): Promise<number> => {
     try {
         const browser = await configuredPuppeteerBrowser();
         const page = await browser.newPage();
+        await page.goto(url);
 
-        await page.goto(url, { waitUntil: 'domcontentloaded' });
-
-        let wordCount = 0;
-
-        const data = await page.evaluate((wordCount, nonTextTags) => {
-            const allData = Array.from(document.querySelectorAll('div')).filter(el => !nonTextTags.split(',').includes(el.localName));
-            allData.forEach(el => {
-                const textContent = el.textContent;
-                if (textContent) {
-                    wordCount += textContent.length;
-                }
+        const wordCount = await page.evaluate(() => {
+            const elements = document.querySelectorAll('div, p, h1, h2, h3, h4, h5, span, a, li, td, th, article, section, blocquote, code, details');
+            let text = '';
+            elements.forEach((element) => {
+                text += element.textContent + ' ';
             });
-            return {
-                wordCount,
-                allData,
-            };
-        }, wordCount, nonTextTags);
+            const words = text.split(/\s+/);
 
-        console.log(data);
+            return words.length;
+       });
 
-        return Promise.resolve(0);
+        await browser.close();
+        return wordCount;
     } catch (error) {
-        return Promise.reject(error);
+        throw error;
     }
 }

@@ -19,10 +19,22 @@ const config: Config = {
         'dark-input': '#242424',
         'light-gray': '#FFFFFF',
         'link-green': '#1DB954',
+        'spotify-green': {
+          500: '#1DB954',
+        },
+        'spotify-gray': {
+          300: '#B3B3B3',
+        },
       },
       textColor: {
         'link-green': '#1DB954',
         'light-gray': '#FFFFFF',
+        'spotify-green': {
+          500: '#1DB954',
+        },
+        'spotify-gray': {
+          300: '#B3B3B3',
+        },
       },
       colors: {
         // Primary Brand Color
@@ -36,6 +48,12 @@ const config: Config = {
         // Text Color
         white: {
           100: '#FFFFFF', // Spotify's White
+        },
+        'spotify-green': {
+          500: '#1DB954',
+        },
+        'spotify-gray': {
+          300: '#B3B3B3',
         },
       },
     },

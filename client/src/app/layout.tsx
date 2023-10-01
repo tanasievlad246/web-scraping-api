@@ -18,7 +18,7 @@ export default function RootLayout({
         height: '100vh',
         margin: 0,
         padding: 0,
-        overflowY: 'hidden',
+        overflowY: 'auto',
       }}>
         <AppBar />
         {children}

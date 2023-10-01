@@ -2,6 +2,7 @@ import express, { Express, json } from 'express';
 import { errorHandler } from './middleware/errorHandler';
 import { globalLogger } from './middleware/globalLogger';
 import { rateLimit } from 'express-rate-limit'
+import cors from 'cors';
 
 import pageContentRouter from './routes/pageContent';
 import sentimentAnalysisRouter from './routes/sentimentAnalysis';
@@ -17,6 +18,7 @@ const limiter = rateLimit({
 const app: Express = express();
 
 app.use(json());
+app.use(cors());
 
 const prefix = '/api/v1/';
 
